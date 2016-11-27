@@ -11,5 +11,10 @@
             "name": "Cristian Fonolla",
             "email": "cristian.fonolla@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\":"src"
+        }
+    }
 }
