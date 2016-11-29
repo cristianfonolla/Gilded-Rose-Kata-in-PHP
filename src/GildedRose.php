@@ -31,6 +31,10 @@ class GildedRose
         $this->item = new Item ($quality,$sellIn);
     }
 
+    public static function of($name, $quality, $sellIn) {
+                return new Item($quality, $sellIn);
+    }
+
     public function tick()
     {
 
