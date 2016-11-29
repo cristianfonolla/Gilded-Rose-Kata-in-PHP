@@ -106,25 +106,25 @@ class GildedRoseSpec extends ObjectBehavior
 
     function it_updates_Sulfuras_items_before_the_sell_date()
     {
-        $this->beConstructedWith('Sulfuras, Hand of Ragnaros',10,5);
+        $this->beConstructedWith('Sulfuras, Hand of Ragnaros',80,5);
         $this->tick();
-        $this->quality->shouldBe(10);
+        $this->quality->shouldBe(80);
         $this->sellIn->shouldBe(5);
     }
 
     function it_updates_Sulfuras_items_on_the_sell_date()
     {
-        $this->beConstructedWith('Sulfuras, Hand of Ragnaros',10,0);
+        $this->beConstructedWith('Sulfuras, Hand of Ragnaros',80,0);
         $this->tick();
-        $this->quality->shouldBe(10);
+        $this->quality->shouldBe(80);
         $this->sellIn->shouldBe(0);
     }
 
     function it_updates_Sulfuras_items_after_the_sell_date()
     {
-        $this->beConstructedWith('Sulfuras, Hand of Ragnaros',10,-1);
+        $this->beConstructedWith('Sulfuras, Hand of Ragnaros',80,-1);
         $this->tick();
-        $this->quality->shouldBe(10);
+        $this->quality->shouldBe(80);
         $this->sellIn->shouldBe(-1);
     }
 
