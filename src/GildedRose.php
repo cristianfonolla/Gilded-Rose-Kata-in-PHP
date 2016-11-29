@@ -28,7 +28,7 @@ class GildedRose
 //        if(array_key_exists($name,$this->llista)){
 //            $item = new $this->llista[$name]($quality,$sellIn);
 //        }
-        $item = new Item ($quality,$sellIn);
+        $this->item = new Item ($quality,$sellIn);
     }
 
     public function tick()
@@ -84,19 +84,19 @@ class GildedRose
 
             default:
 
-                if ($this->quality > 0)
-                    $this->quality = $this->quality - 1;
+//                if ($this->quality > 0)
+//                    $this->quality = $this->quality - 1;
+//
+//                $this->sellIn = $this->sellIn - 1;
+//
+//                if ($this->sellIn < 0) {
+//                    if ($this->quality > 0)
+//                        $this->quality = $this->quality - 1;
+//                }
 
-                $this->sellIn = $this->sellIn - 1;
-
-                if ($this->sellIn < 0) {
-                    if ($this->quality > 0)
-                        $this->quality = $this->quality - 1;
-                }
-
-//                $this->item->tick();
-//                $this->quality = $this->item->quality;
-//                $this->sellIn = $this->item->sellIn;
+                $this->item->tick();
+                $this->quality = $this->item->quality;
+                $this->sellIn = $this->item->sellIn;
                 break;
 
         }
