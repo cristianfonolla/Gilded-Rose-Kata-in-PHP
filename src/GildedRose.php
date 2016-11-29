@@ -17,10 +17,6 @@ class GildedRose
         $this->sellIn = $sellIn;
     }
 
-    public static function of($name, $quality, $sellIn) {
-        return new static($name, $quality, $sellIn);
-    }
-
     public function tick()
     {
         if ($this->name == 'Aged Brie'){
