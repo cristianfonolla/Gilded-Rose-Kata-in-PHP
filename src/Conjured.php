@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alumne
- * Date: 1/12/16
- * Time: 16:00
- */
 
 namespace App;
 
@@ -19,8 +13,9 @@ class Conjured
 
     public $sellIn;
 
+
     /**
-     * Item constructor.
+     * Conjured constructor.
      * @param $quality
      * @param $sellIn
      */
