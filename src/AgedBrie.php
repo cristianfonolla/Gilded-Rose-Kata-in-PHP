@@ -7,24 +7,8 @@ namespace App;
  * Class AgedBrie
  * @package App
  */
-class AgedBrie
+class AgedBrie extends Item
 {
-
-    public $quality;
-
-    public $sellIn;
-
-
-    /**
-     * AgedBrie constructor.
-     * @param $quality
-     * @param $sellIn
-     */
-    public function __construct($quality, $sellIn)
-    {
-        $this->quality = $quality;
-        $this->sellIn = $sellIn;
-    }
 
     public function tick()
     {
