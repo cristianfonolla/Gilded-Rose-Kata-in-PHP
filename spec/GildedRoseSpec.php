@@ -3,8 +3,11 @@
 namespace spec\App;
 
 
-use App\GildedRose;
+use App\AgedBrie;
+use App\BackStage;
+use App\Conjured;
 use App\Item;
+use App\Sulfuras;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -14,23 +17,44 @@ use Prophecy\Argument;
  */
 class GildedRoseSpec extends ObjectBehavior
 {
-    function it_is_an_initializable_item()
+    function it_is_an_initializable_normal_item()
     {
         $this->beConstructedThrough('of',['normal',10,5]);
         $this->shouldHaveType(Item::class);
     }
 
+    function it_is_an_initializable_aged_brie_item()
+    {
+        $this->beConstructedThrough('of',['Aged Brie',10,5]);
+        $this->shouldHaveType(AgedBrie::class);
+    }
+
+    function it_is_an_initializable_backstage_item()
+    {
+        $this->beConstructedThrough('of',['Backstage passes to a TAFKAL80ETC concert',10,11]);
+        $this->shouldHaveType(BackStage::class);
+    }
+
+    function it_is_an_initializable_sulfuras_item()
+    {
+        $this->beConstructedThrough('of',['Sulfuras, Hand of Ragnaros',80,5]);
+        $this->shouldHaveType(Sulfuras::class);
+    }
+
+    function it_is_an_initializable_conjured_item()
+    {
+        $this->beConstructedThrough('of',['Conjured Mana Cake',10,10]);
+        $this->shouldHaveType(Conjured::class);
+    }
+
     function it_updates_normal_items_before_sell_date()
     {
         $this->beConstructedThrough('of',['normal',10,5]);
-//        $item = GildedRose::of('normal',10,5);
-        $this->tick();
-//        $this->assertEquals($item->quality,9);
+        $this->tick();;
         $this->quality->shouldBe(9);
         $this->sellIn->shouldBe(4);
     }
 
-    //limit case
     function it_updates_normal_items_on_sell_date()
     {
         $this->beConstructedThrough('of',['normal',10,0]);
